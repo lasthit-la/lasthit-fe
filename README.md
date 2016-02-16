@@ -25,7 +25,7 @@ Please see the [gulpfile.js](https://github.com/florinn/angular-typescript-gulp-
 
 > **Tip:** The project allows you to choose a workflow that fits you best, going either for a code editor (**SublimeText**, **Brackets** etc) and `gulp watch` combo, or for a Typescript aware IDE, or maybe for both at the same time.
 >
-> **Note:** When using IDE's that have built-in support for Typescript (**Visual Studio**, **WebStorm**, etc) you should: 
+> **Note:** When using IDE's that have built-in support for Typescript (**Visual Studio**, **WebStorm**, etc) you should:
 
 > - Create an IDE specific project corresponding to the `app` folder and enable combining Javascript output into the file `.tmp/js/app/output.js`
 > - Create another IDE specific project corresponding to the `test` folder and enable combining Javascript output into the file `.tmp/js/test/output.test.js`
@@ -49,7 +49,7 @@ There are two kinds of dependencies in this project: tools and application speci
 
 > You can get the tools the project depends upon via [npm](https://www.npmjs.org/):
 
-> ``` 
+> ```
 > npm install
 > ```
 
@@ -122,7 +122,7 @@ Directory Layout
 |   gulpfile.js
 |   karma.conf.js                   // Karma test runner config file
 |   package.json
-|   
+|
 +---app                             // root folder for all app related scripts
 |   |   .htaccess
 |   |   404.html
@@ -131,7 +131,7 @@ Directory Layout
 |   |   index.html
 |   |   robots.txt
 |   |   _all.ts                     // '.h' file for app with .d.ts refs
-|   |   
+|   |
 |   \---todo                        // folder of 'todo' app feature
 |           todo.controller.ts
 |           todoBlur.directive.ts
@@ -140,20 +140,20 @@ Directory Layout
 |           todoScope.ts
 |           todoStorage.service.ts
 |           todoStorage.ts
-|           
+|
 +---content                         // root folder for all static content
 |   +---images
 |   +---styles
-|   
+|
 +---lib                             // third party libraries
-|        
+|
 \---test                            // root folder for all test related scripts
     |   index.html                  // Mocha test runner for browser
     |   setup.ts                    // '.h' file for tests with .d.ts refs
-    |   
+    |
     \---spec                        // folder for any 'bdd' tests (aka specs)
             todo.controller.test.ts
-            todoStorage.service.test.ts         
+            todoStorage.service.test.ts
 ```
 
 
@@ -177,4 +177,3 @@ Serving the Application Files
 Although the project contains only client side code and hence you may serve the files directly from the file system, it is advisable to use a web server to avoid any browser related security restrictions (aka sandboxing).
 
 Make sure that the web server you are using is properly configured to serve static files.
-
