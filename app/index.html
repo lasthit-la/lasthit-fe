@@ -1,15 +1,14 @@
 ﻿<!DOCTYPE html>
-<html ng-app="todomvc" data-framework="typescript">
+<html ng-app="lasthit" data-framework="typescript">
 <head>
     <meta charset="utf-8">
-    <title>angular typescript gulp seed</title>
-    <meta name="description" content="">
+    <title>LastHit - League of Legends</title>
+    <meta name="description" content="Torneos 5vs5, 3vs3, 1vs1 League of Legends">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" />
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../bower_components/todomvc-common/base.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -25,59 +24,74 @@
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section id="todoapp" ng-controller="todoCtrl">
-        <section id="header">
-            <h1>todos</h1>
-            <form id="todo-form" ng-submit="vm.addTodo()">
-                <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
-            </form>
-        </section>
-        <section id="main" ng-show="todos.length" ng-cloak>
-            <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="vm.markAll(!allChecked)">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul id="todo-list">
-                <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
-                    <div class="view">
-                        <input class="toggle" type="checkbox" ng-model="todo.completed">
-                        <label ng-dblclick="vm.editTodo(todo)">{{todo.title}}</label>
-                        <button class="destroy" ng-click="vm.removeTodo(todo)"></button>
+    <nav id="main-nav" class="navbar-fixed-top">
+        <div class="container">
+            <div class="col-xs-3">
+                <a href="/" class="logo"></a>
+            </div>
+            <div class="col-xs-9">
+                <div class="user col-xs-12">
+                    <img src="//ddragon.leagueoflegends.com/cdn/6.3.1/img/champion/Aatrox.png" alt="" class="icon pull-left">
+                    <div class="welcome">Bienvenido Usuario</div>
+                    <div class="actions">
+                        <button class="green-button">Modificar perfil</button>
+                        <button class="red-button">Logout</button>
                     </div>
-                    <form ng-submit="vm.doneEditing(todo)">
-                        <input class="edit" ng-model="todo.title" todo-blur="vm.doneEditing(todo)" todo-focus="todo == editedTodo">
-                    </form>
+                </div>
+                <div class="menu col-xs-12">
+                    <ul class="list-inline col-xs-7">
+                        <li><a href="#">Home</a></li>
+                        <li>|</li>
+                        <li><a href="#">Ranking</a></li>
+                        <li>|</li>
+                        <li><a href="#">Contact</a></li>
+                        <li>|</li>
+                        <li><a href="#">Register</a></li>
+                        <li>|</li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                    <input type="text" class="search col-xs-5" placeholder="Buscar por nombre de equipo o jugador">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="main-container" class="container">
+        <div class="row promo-container">
+            <h1 class="text-center">A new tournament way is comming...</h1>
+            <p class="text-center">
+                Prepare yourself, <b>get stronger</b> and <b>forge alliances</b>.<br>
+                You will have to face many enemies.<br>
+                Will <b>you</b> and <b>your team</b> be able to <b>stand out</b>?
+            </p>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <input type="email" class="form-control input-lg" placeholder="Enter your email">
+                    <button class="btn btn-submit center-block">Join the contest</button>
+                </div>
+            </div>
+            <p class="text-center">And win one of these rewards</p>
+            <ul class="list-inline rewards">
+                <li class="third">
+                    <div>
+                        <h2>2,370</h2>
+                        <small>Riot Points</small>
+                    </div>
+                </li>
+                <li class="first">
+                    <div>
+                        <h2>10,250</h2>
+                        <small>Riot Points</small>
+                    </div>
+                </li>
+                <li class="second">
+                    <div>
+                        <h2>6,150</h2>
+                        <small>Riot Points</small>
+                    </div>
                 </li>
             </ul>
-        </section>
-        <section id="footer" ng-show="todos.length" ng-cloak>
-            <span id="todo-count">
-                <strong>{{remainingCount}}</strong>
-                <ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
-            </span>
-            <ul id="filters">
-                <li>
-                    <a ng-class="{selected: location.path() == '/'} " href="#/">All</a>
-                </li>
-                <li>
-                    <a ng-class="{selected: location.path() == '/active'}" href="#/active">Active</a>
-                </li>
-                <li>
-                    <a ng-class="{selected: location.path() == '/completed'}" href="#/completed">Completed</a>
-                </li>
-            </ul>
-            <button id="clear-completed" ng-click="vm.clearDoneTodos()" ng-show="doneCount">Clear completed ({{doneCount}})</button>
-        </section>
-    </section>
-    <section id="info">
-        <p>Double-click to edit a todo</p>
-        <p>
-            Credits:
-            <a href="http://twitter.com/cburgdorf">Christoph Burgdorf</a>,
-            <a href="http://ericbidelman.com">Eric Bidelman</a>,
-            <a href="http://jacobmumm.com">Jacob Mumm</a>
-            <a href="http://igorminar.com">Igor Minar</a> and
-            <a href="http://zamboch.blogspot.com">Pavel Savara</a>
-        </p>
-    </section>
+        </div>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
         (function (b, o, i, l, e, r) {

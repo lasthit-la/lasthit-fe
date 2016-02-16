@@ -1,4 +1,4 @@
-﻿/// <reference path='../_all.ts' />
+/// <reference path='../_all.ts' />
 module todos {
     'use strict';
     export class TodoItem {
@@ -7,4 +7,4 @@ module todos {
             public completed: boolean
             ) { }
     }
-} 
+}

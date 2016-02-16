@@ -55,7 +55,8 @@ module todos {
             if (!newTodo.length) {
                 return;
             }
-            var todoItem = new TodoItem(newTodo, false);
+            var todoItem:TodoItem = new TodoItem(newTodo, false);
+            todoItem.getName();
             this.todos.push(todoItem);
             this.$scope.newTodo = '';
         }
@@ -79,4 +80,4 @@ module todos {
             this.todos.forEach(todoItem => { todoItem.completed = completed; });
         }
     }
-} 
+}

@@ -5,85 +5,184 @@
     padding: 0.2em 0;
 }
 
-/* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 131px;
+    background-color: #111111;
+    background-image: url(../images/main-rock-background.jpg);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+#main-container {
+    background-color: #161616;
+    box-shadow: 0 0 5px black;
+    background-image: url(../images/container-background.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+#main-nav {
+    background-image: url(../images/main-nav-background.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #0f0e0f;
+    height: 131px;
+    box-shadow: 0 0 15px black, 0 0 10px black;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+#main-nav .user {
+    margin-top: 25px;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+#main-nav .menu {
+    margin-top: 10px;
+    background-color: rgba(21, 21, 21, 0.50);
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+#main-nav .menu .search {
+    margin-top: 5px;
+    border: 0;
+    border-radius: 2px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
+#main-nav .menu ul {
+    margin: 0;
+    padding: 6px;
+}
+
+#main-nav .menu a {
+    font-size: 12px;
+    color: #f1570d;
+}
+
+#main-nav .welcome {
+    color: white;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#main-nav .user .icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+}
+
+.green-button {
+    background-color: #6ca421;
+    color: white;
+    border: 1px solid #7fb733;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.red-button {
+    background-color: #ac393d;
+    color: white;
+    border: 1px solid #d3565a;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 201px;
+    height: 81px;
+}
+
+#main-nav .logo {
+    margin-top: 25px;
+}
+
+.promo-container {
+    background-image: url(../images/promo-background.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 600px;
+}
+
+.promo-container h1 {
+    color: #DEA855;
+    text-shadow: 0 0 5px black;
+    padding: 5px;
+    font-family: "Times New Roman";
+    font-size: 42px;
+}
+
+.promo-container p {
+    color: #D8D8D8;
+    margin: 0 auto;
+    font-size: 18px;
+    font-family: Georgia;
+    text-shadow: 0 0 5px black;
+}
+
+.promo-container input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.promo-container .btn-submit {
+    background-color: #FF4F4F;
+    color: #FFFFFF;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #FF8C8C;
+    border-bottom: 5px solid #FF8C8C;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.promo-container .rewards {
+    width: 510px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.promo-container .rewards li {
+    background-color: #1F0503;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black;
+    background-image: url(../images/riot-coin-reward.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.promo-container .rewards li div {
+    padding-top: 10px;
+    color: white;
+    text-shadow: 0 0 5px black;
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+.promo-container .rewards li.third {
+    width: 150px;
+    height: 150px;
+    border: 10px solid #65513E;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
+.promo-container .rewards li.second {
+    width: 150px;
+    height: 150px;
+    border: 10px solid #D7D7D8;
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+.promo-container .rewards li.first {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #FFD065;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+.promo-container .rewards li h2 {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+.promo-container .rewards li.first h2 {
+    font-size: 52px;
+    padding-top: 18px;
 }
